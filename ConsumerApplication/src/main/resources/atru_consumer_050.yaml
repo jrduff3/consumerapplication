@@ -1,0 +1,94 @@
+swagger: '2.0'
+info:
+  title: Consumer API
+  description: Provides an API for Consumers of the ATRU platform
+  version: 0.5.0
+  contact:
+    name: Chris Riley
+    url: api.atru.io
+    email: criley@hkmconsultingllc.com
+paths:
+  /consumers:
+    get:
+      description: Get all `Consumers`
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Array of `Consumers`
+          schema:
+            $ref: '#/definitions/Consumers'
+    post:
+      description: Create a `Consumer`
+      consumes:
+        - application/json
+      parameters:
+        - name: request
+          description: Consumer object
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/Consumer'
+      responses:
+        201:
+          description: Successfully created Consumer
+    put:
+      description: Update a `Consumer` using their id
+      consumes:
+        - application/json
+      parameters:
+        - name: request
+          description: Consumer object
+          required: true
+          in: body
+          schema:
+            $ref: '#/definitions/Consumer'
+      responses:
+        200:
+          description: Successfully updated Consumer
+  /consumers/{id}:
+    get:
+      description: Get a `Consumer` using their id
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          description: Consumer id
+          required: true
+          in: path
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Consumer object
+          schema:
+            $ref: '#/definitions/Consumer'
+
+    delete:
+      description: Delete a `Consumer` using their id
+      parameters:
+        - name: id
+          description: Consumer id
+          required: true
+          in: path
+          type: integer
+          format: int64
+      responses:
+        204:
+          description: Successfully deleted Consumer
+definitions:
+  Consumers:
+    type: object
+    properties:
+      Consumers:
+        type: array
+        items:
+          $ref: '#/definitions/Consumer'
+  Consumer:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      consumerName:
+        type: string

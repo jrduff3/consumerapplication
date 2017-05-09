@@ -1,0 +1,5 @@
+com/booknds/domain/Consumer.class
+com/booknds/service/ConsumerService.class
+com/booknds/ConsumerApplication.class
+com/booknds/repository/ConsumerRepository.class
+com/booknds/controller/ConsumerController.class
