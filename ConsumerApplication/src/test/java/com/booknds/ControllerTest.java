@@ -35,7 +35,7 @@ public class ControllerTest
      */
     public void testApp()
     {
-        assertTrue( true );
+        assertTrue( false );
     }
 
 }
