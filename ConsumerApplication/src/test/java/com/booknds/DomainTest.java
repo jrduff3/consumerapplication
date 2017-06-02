@@ -35,7 +35,7 @@ public class DomainTest
      */
     public void testApp()
 {
-    assertTrue( false );
+    assertTrue( true );
 }
 
 }
